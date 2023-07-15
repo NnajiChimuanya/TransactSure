@@ -1,0 +1,129 @@
+@import "./colors";
+@import "./fonts";
+@import "./mixins";
+
+.signup {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .form {
+    display: flex;
+    flex-direction: column;
+
+    .form-field {
+      width: 73vw;
+      height: 50px;
+      padding: 0px 8px;
+      margin-bottom: 15px;
+      border: 2px solid rgba(84, 95, 125, 0.15);
+      border-radius: 5px;
+      outline-width: 0px;
+      box-sizing: border-box;
+
+      @media screen and (min-width: 600px) {
+        width: 60vw;
+      }
+
+      @media screen and (min-width: 900px) {
+        width: 465px;
+      }
+    }
+
+    .email::placeholder {
+      font-weight: $smallWeight;
+      font-size: $mediumSize;
+      opacity: 0.6;
+    }
+
+    .password-container {
+      width: 70vw;
+      height: 50px;
+      padding: 0px 8px;
+      margin-bottom: 15px;
+      border: 2px solid rgba(84, 95, 125, 0.15);
+      border-radius: 5px;
+      box-sizing: content-box;
+      @include flex-center;
+
+      @media screen and (min-width: 600px) {
+        width: 58vw;
+      }
+
+      @media screen and (min-width: 900px) {
+        width: 455px;
+      }
+
+      .password {
+        width: 100%;
+        border: none;
+        outline-width: 0px;
+        width: 73vw;
+        height: 50px;
+        padding: 0px 8px;
+        margin-left: -10px;
+      }
+
+      .password::placeholder {
+        font-weight: $smallWeight;
+        font-size: $mediumSize;
+        opacity: 0.6;
+      }
+
+      .toggle {
+        background: none;
+        border: none;
+        color: $blue;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        font: {
+          family: $avenirRegular;
+          size: $smallSize;
+          weight: $mediumWeight;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    p {
+      .link {
+        font : {
+          family: $avenirBold;
+          weight: $mediumWeight;
+          size: $smallSize;
+        }
+        color: $blue;
+        text-decoration: none;
+        letter-spacing: 0.1em;
+      }
+      margin-bottom: 15px;
+    }
+
+    .button {
+      background-color: $blue !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 70vw;
+      height: 50px;
+      color: #fff;
+      background: $blue;
+      border: 0px;
+      border-radius: 5px;
+
+      @media screen and (min-width: 600px) {
+        width: 60vw;
+      }
+
+      @media screen and (min-width: 900px) {
+        width: 465px;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.transactionsPage {
+  .transactionsHeader {
+    margin: 30px 20px 0px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: $avenirRegular;
+
+    .backspace {
+      transition: transform 0.2s;
+      font-size: 20px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .notificationsIcon {
+      transition: transform 0.2s;
+      font-size: 20px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .transactionBody {
+    margin: 30px 20px 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .noTransactionSection {
+      margin-top: 30px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      h4 {
+        font-family: $avenirBold;
+        margin-top: 20px;
+      }
+
+      p {
+        margin: 20px 0px 20px 0px;
+        font-family: $avenirRegular;
+        font-size: 14px;
+      }
+    }
+  }
+}

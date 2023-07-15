@@ -1,0 +1,16 @@
+.fundAccount {
+  cursor: pointer;
+  color: white;
+  border-radius: 4px;
+  border: 0;
+  padding: 10px 20px 10px 20px;
+  background: linear-gradient(0deg, #995c12 0%, #995c12 100%), #fff;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s;
+  font-family: $avenirRegular;
+  -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

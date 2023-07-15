@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+
+@font-face {
+  font-family: avenirRegular;
+  src: url("../fonts/avenirNextRegular.otf");
+}
+
+@font-face {
+  font-family: avenirBold;
+  src: url("../fonts//avenirNextBold.otf");
+}
+
+@font-face {
+  font-family: sfCompact;
+  src: url("../fonts/sfCompact.ttf");
+}
+
+// FONT FAMILIES
+$avenirRegular: avenirRegular;
+$avenirBold: avenirBold;
+$workSans: "Work Sans", sans-serif;
+$sfCompact: sfCompact;
+
+$boldWeight: 900;
+$boldSize: 40px;
+$boldLineHeight: 55px;
+
+$mediumWeight: 600;
+$mediumSize: 14px;
+
+$regularWeight: 100;
+$regularSize: 20px;
+$regularLineHeight: 27px;
+
+$smallWeight: 400;
+$smallSize: 12px;
