@@ -63,20 +63,20 @@ const Transactions: React.FC = () => {
         </div> */}
 
         <div className="transactionList">
-          {list?.map((item, id) => {
-            let { amount, dateOfTransaction } = item;
+          {list?.map((item, key) => {
+            let { amount, dateOfTransaction, _id, recieverId } = item;
             return (
-              <div className="transactionItem" key={id}>
+              <div className="transactionItem" key={key}>
                 <div className="details">
                   <div className="initials"> EJ</div>
                   <div className="data">
-                    <h5>Ejiro David</h5>
-                    <h5>Money sent</h5>
+                    <h5 className="name">{recieverId}d</h5>
+                    <h6>{_id}</h6>
                   </div>
                 </div>
                 <div className="date">
                   <h6>{amount}</h6>
-                  <h6>{dateOfTransaction}</h6>
+                  <h6>{new Date(dateOfTransaction).toLocaleString()}</h6>
                 </div>
               </div>
             );

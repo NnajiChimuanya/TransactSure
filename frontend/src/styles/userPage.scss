@@ -6,19 +6,26 @@ body {
 }
 
 .userPage {
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
-    display: none;
-    visibility: hidden;
-  }
+  // overflow-y: scroll;
+  // &::-webkit-scrollbar {
+  //   display: none;
+  //   visibility: hidden;
+  // }
 
   .header {
-    margin: 30px 20px 0px 20px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-family: $avenirRegular;
+    padding: 0px 20px 0px 20px;
+
+    height: 50px;
+    width: 100vw;
+    top: 0;
+    position: sticky;
+    z-index: 100;
+    background-color: white;
 
     .notificationsIcon {
       transition: transform 0.2s;
@@ -130,6 +137,7 @@ body {
 
   .frame5 {
     margin-top: 10px;
+    margin-bottom: 100px;
   }
 
   .transferFunds {
