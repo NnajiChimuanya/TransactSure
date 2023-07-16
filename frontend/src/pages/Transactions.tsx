@@ -17,8 +17,8 @@ const Transactions: React.FC = () => {
   const { name, email, phoneNumber, paymentId, password, balance } = state;
 
   const [list, setList] = useState([]);
-  //get transactions
 
+  //get transactions
   const getTransactions = () => {
     let payload = { email, password };
 
@@ -53,13 +53,34 @@ const Transactions: React.FC = () => {
       <Balance />
 
       <div className="transactionBody">
-        <div className="noTransactionSection">
+        {/* <div className="noTransactionSection">
           <NoTransaction className="noTransactionSvg" />
           <h4>You have no transaction yet</h4>
           <p>
             Make you first transaction and we will keep the record here for you.
           </p>
           <FundAccountButton />
+        </div> */}
+
+        <div className="transactionList">
+          {list?.map((item, id) => {
+            let { amount, dateOfTransaction } = item;
+            return (
+              <div className="transactionItem" key={id}>
+                <div className="details">
+                  <div className="initials"> EJ</div>
+                  <div className="data">
+                    <h5>Ejiro David</h5>
+                    <h5>Money sent</h5>
+                  </div>
+                </div>
+                <div className="date">
+                  <h6>{amount}</h6>
+                  <h6>{dateOfTransaction}</h6>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 

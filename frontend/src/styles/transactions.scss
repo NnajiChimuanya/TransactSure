@@ -28,13 +28,12 @@
 
   .transactionBody {
     margin: 30px 20px 0px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     .noTransactionSection {
       margin-top: 30px;
       width: 300px;
+      margin-left: auto;
+      margin-right: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -50,6 +49,40 @@
         margin: 20px 0px 20px 0px;
         font-family: $avenirRegular;
         font-size: 14px;
+      }
+    }
+
+    .transactionList {
+      .transactionItem {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        background-color: antiquewhite;
+        margin-bottom: 10px;
+
+        .details {
+          display: flex;
+          align-items: center;
+
+          .initials {
+            background-color: rgba(0, 159, 245, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border-radius: 50%;
+            padding: 15px;
+          }
+
+          .data {
+            margin-left: 20px;
+          }
+        }
+
+        .date {
+          text-align: right;
+        }
       }
     }
   }

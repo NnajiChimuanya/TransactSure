@@ -15,7 +15,10 @@ function App() {
       <Route path="/" element={email !== "" ? <UserPage /> : <SigninPage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/signin" element={<SigninPage />} />
-      <Route path="/transactions" element={<Transactions />} />
+      <Route
+        path="/transactions"
+        element={email !== "" ? <Transactions /> : <SigninPage />}
+      />
     </Routes>
   );
 }
