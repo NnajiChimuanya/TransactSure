@@ -8,4 +8,8 @@
   display: flex;
   font-family: $avenirRegular;
   border-radius: 15px;
+
+  @media screen and (min-width: 700px) {
+    margin: 30px 40px 0px 40px;
+  }
 }

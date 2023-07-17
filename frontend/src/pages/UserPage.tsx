@@ -156,62 +156,66 @@ const UserPage = () => {
         </button>
       </div>
 
-      <div className="frame3">
-        <h5>What would you like to do ?</h5>
-        <div className="services">
-          <div
-            style={{ backgroundColor: "rgba(22, 83, 1, 1)" }}
-            className="airtime"
-          >
-            <Airtime />
-            <h4>Buy airtime</h4>
-          </div>
-          <div
-            style={{ backgroundColor: "rgba(0, 99, 153, 1)" }}
-            className="transfer"
-          >
-            <Transfer />
-            <h4>Send fund</h4>
-          </div>
-          <div
-            style={{ backgroundColor: "rgba(12, 1, 83, 1)" }}
-            className="data"
-          >
-            <Data />
-            <h4>Buy data</h4>
-          </div>
-          <div
-            style={{ backgroundColor: "rgba(186, 29, 200, 1)" }}
-            className="bills"
-          >
-            <Bills />
-            <h4>Pay bills</h4>
+      <div className="variety">
+        <div className="frame3">
+          <h5>What would you like to do ?</h5>
+          <div className="services">
+            <div
+              style={{ backgroundColor: "rgba(22, 83, 1, 1)" }}
+              className="airtime"
+            >
+              <Airtime />
+              <h4>Buy airtime</h4>
+            </div>
+            <div
+              style={{ backgroundColor: "rgba(0, 99, 153, 1)" }}
+              className="transfer"
+            >
+              <Transfer />
+              <h4>Send fund</h4>
+            </div>
+            <div
+              style={{ backgroundColor: "rgba(12, 1, 83, 1)" }}
+              className="data"
+            >
+              <Data />
+              <h4>Buy data</h4>
+            </div>
+            <div
+              style={{ backgroundColor: "rgba(186, 29, 200, 1)" }}
+              className="bills"
+            >
+              <Bills />
+              <h4>Pay bills</h4>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="frame4">
-        <img
-          className="communityImage"
-          src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/03/31/11/782f3606-1ca0-4f9e-9024-57a27b636ae5.jpg"
-          alt="community"
-        />
-        <h4>Community</h4>
-        <p>Discover and create savings group</p>
+        <div className="frame4">
+          <div className="communitySection">
+            <img
+              className="communityImage"
+              src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/03/31/11/782f3606-1ca0-4f9e-9024-57a27b636ae5.jpg"
+              alt="community"
+            />
+            <h4>Community</h4>
+            <p>Discover and create savings group</p>
 
-        <button className="discover">Discover</button>
-      </div>
+            <button className="discover">Discover</button>
+          </div>
 
-      <div className="frame5">
-        <img
-          className="communityImage"
-          src="https://s35691.pcdn.co/wp-content/uploads/2018/11/community.jpg"
-          alt="community"
-        />
-        <h4>SKYE for business</h4>
-        <p>Accept payment and manage money easily</p>
+          <div className="businessSection">
+            <img
+              className="communityImage"
+              src="https://s35691.pcdn.co/wp-content/uploads/2018/11/community.jpg"
+              alt="community"
+            />
+            <h4>SKYE for business</h4>
+            <p>Accept payment and manage money easily</p>
 
-        <button className="discover">Get started</button>
+            <button className="discover">Get started</button>
+          </div>
+        </div>
       </div>
 
       <NavBar />
