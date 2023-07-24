@@ -8,7 +8,7 @@ import { Airtime, Bills, Data, Transfer } from "../svg";
 import NavBar from "../components/NavBar/NavBar";
 import Balance from "../components/Balance/Balance";
 import { Link } from "react-router-dom";
-import FundAccountButton from "../components/FundAccountButton/FundAccountButton";
+import PaymentIdButton from "../components/PaymentIdButton/PaymentIdButton";
 
 const UserPage = () => {
   const { state, dispatch } = useContext(SkyeWalletContext);
@@ -147,7 +147,7 @@ const UserPage = () => {
       <Balance />
 
       <div className="frame2">
-        <FundAccountButton />
+        <PaymentIdButton />
         <button className="viewTransactions">
           <Link className="transactionsLink" to={"/transactions"}>
             {" "}

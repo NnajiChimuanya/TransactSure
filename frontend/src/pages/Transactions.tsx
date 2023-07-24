@@ -8,7 +8,7 @@ import { FaUserAlt } from "react-icons/fa";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { NoTransaction, Credit, Debit } from "../svg";
-import FundAccountButton from "../components/FundAccountButton/FundAccountButton";
+import FundAccountButton from "../components/PaymentIdButton/PaymentIdButton";
 
 const Transactions: React.FC = () => {
   let navigate = useNavigate();
@@ -53,46 +53,49 @@ const Transactions: React.FC = () => {
       <Balance />
 
       <div className="transactionBody">
-        {/* <div className="noTransactionSection">
-          <NoTransaction className="noTransactionSvg" />
-          <h4>You have no transaction yet</h4>
-          <p>
-            Make you first transaction and we will keep the record here for you.
-          </p>
-          <FundAccountButton />
-        </div> */}
-
-        <div className="transactionList">
-          {list?.map((item, key) => {
-            let { amount, dateOfTransaction, _id, recieverId, senderEmail } =
-              item;
-            return (
-              <div className="transactionItem" key={key}>
-                <div className="details">
-                  {senderEmail === email ? (
-                    <Debit className="debitIcon" />
-                  ) : (
-                    <Credit className="creditIcon" />
-                  )}
-                  <div className="data">
-                    <h5 className="name">{recieverId}d</h5>
-                    <h6>{_id}</h6>
+        {list?.length == 0 ? (
+          <div className="noTransactionSection">
+            <NoTransaction className="noTransactionSvg" />
+            <h4>You have no transaction yet</h4>
+            <p>
+              Make you first transaction and we will keep the record here for
+              you.
+            </p>
+            <FundAccountButton />
+          </div>
+        ) : (
+          <div className="transactionList">
+            {list?.map((item, key) => {
+              let { amount, dateOfTransaction, _id, recieverId, senderEmail } =
+                item;
+              return (
+                <div className="transactionItem" key={key}>
+                  <div className="details">
+                    {senderEmail === email ? (
+                      <Debit className="debitIcon" />
+                    ) : (
+                      <Credit className="creditIcon" />
+                    )}
+                    <div className="data">
+                      <h5 className="name">{recieverId}d</h5>
+                      <h6>{_id}</h6>
+                    </div>
+                  </div>
+                  <div className="date">
+                    <h6
+                      className={`${
+                        senderEmail === email ? `debitAmount` : `creditAmount`
+                      }`}
+                    >
+                      {amount}
+                    </h6>
+                    <h6>{new Date(dateOfTransaction).toLocaleString()}</h6>
                   </div>
                 </div>
-                <div className="date">
-                  <h6
-                    className={`${
-                      senderEmail === email ? `debitAmount` : `creditAmount`
-                    }`}
-                  >
-                    {amount}
-                  </h6>
-                  <h6>{new Date(dateOfTransaction).toLocaleString()}</h6>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        )}
       </div>
 
       <NavBar />
