@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdKeyboardBackspace } from "react-icons/md";
-import { NoTransaction } from "../svg";
+import { NoTransaction, Credit, Debit } from "../svg";
 import FundAccountButton from "../components/FundAccountButton/FundAccountButton";
 
 const Transactions: React.FC = () => {
@@ -64,18 +64,29 @@ const Transactions: React.FC = () => {
 
         <div className="transactionList">
           {list?.map((item, key) => {
-            let { amount, dateOfTransaction, _id, recieverId } = item;
+            let { amount, dateOfTransaction, _id, recieverId, senderEmail } =
+              item;
             return (
               <div className="transactionItem" key={key}>
                 <div className="details">
-                  <div className="initials"> EJ</div>
+                  {senderEmail === email ? (
+                    <Debit className="debitIcon" />
+                  ) : (
+                    <Credit className="creditIcon" />
+                  )}
                   <div className="data">
                     <h5 className="name">{recieverId}d</h5>
                     <h6>{_id}</h6>
                   </div>
                 </div>
                 <div className="date">
-                  <h6>{amount}</h6>
+                  <h6
+                    className={`${
+                      senderEmail === email ? `debitAmount` : `creditAmount`
+                    }`}
+                  >
+                    {amount}
+                  </h6>
                   <h6>{new Date(dateOfTransaction).toLocaleString()}</h6>
                 </div>
               </div>
