@@ -32,9 +32,11 @@ const SigninPage = () => {
 
   return (
     <div className="login">
-      <h2>Signin</h2>
+      <h2 style={{ marginBottom: "10px" }}>Signin</h2>
+      <h6>Test email : test@gmail.com</h6>
+      <h6>password : password</h6>
       {errorMessage && (
-        <div className="main-paragraph">
+        <div className="errorMessage">
           <p style={{ color: "red" }}>{errorMessage}</p>
         </div>
       )}

@@ -10,6 +10,11 @@
   justify-content: center;
   align-items: center;
 
+  font-family: $avenirRegular;
+  h6 {
+    margin-bottom: 5px;
+  }
+
   .form {
     .email {
       width: 73vw;
