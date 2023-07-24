@@ -1,4 +1,26 @@
 .paymentIdPage {
+  .errorMessageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $avenirBold;
+    margin-top: 10px;
+    font-family: $avenirBold;
+    font-size: 12px;
+
+    .errorMessage {
+      width: 280px;
+      height: 40px;
+      background-color: red;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50px 50px 0px 50px;
+      transition: transform 1s ease-in;
+    }
+  }
+
   .paymentIdList {
     padding-left: 20px;
     padding-top: 20px;
@@ -50,6 +72,34 @@
             transform: scale(1.2);
           }
         }
+      }
+    }
+  }
+
+  .generatePaymentIdContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 100px;
+    left: auto;
+    right: auto;
+    width: 100vw;
+
+    .generatePaymentIdButton {
+      background-color: rgba(39, 174, 96, 1);
+      border: 0px;
+      color: white;
+      font-family: $avenirRegular;
+      height: 50px;
+      width: 200px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }

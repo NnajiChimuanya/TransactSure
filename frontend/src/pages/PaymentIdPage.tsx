@@ -9,10 +9,10 @@ import { AiFillDelete } from "react-icons/ai";
 const PaymentIdPage = () => {
   const { state, dispatch } = useContext(SkyeWalletContext);
   const { paymentId, email, password } = state;
-  console.log(paymentId);
-
   const [errorMessage, setErrorMessage] = useState(null);
   const [successMessage, setsuccessMessage] = useState(null);
+
+  console.log(process.env.REACT_APP_API);
 
   //generates new Id
   const handleGeneratePaymentId = (e: React.ChangeEvent<any>) => {
@@ -58,21 +58,12 @@ const PaymentIdPage = () => {
       <ComponentHeader />
 
       {errorMessage && (
-        <div className="main-paragraph">
-          <p style={{ color: "red" }}>{errorMessage}</p>
+        <div className="errorMessageContainer">
+          <div className="errorMessage">
+            <p>{errorMessage}</p>
+          </div>
         </div>
       )}
-
-      {/* <div>
-        payment
-        <button
-          onClick={() => {
-            navigator.clipboard.writeText("Nnaji Chimuanya");
-          }}
-        >
-          copy to clipboard
-        </button>
-      </div> */}
 
       <div className="paymentIdList">
         {paymentId?.map((item, id) => {
@@ -84,13 +75,26 @@ const PaymentIdPage = () => {
                   className="copyIcon"
                   onClick={() => {
                     navigator.clipboard.writeText(item);
+                    alert("Item copied");
                   }}
                 />
-                <AiFillDelete className="deleteIcon" />
+                <AiFillDelete
+                  className="deleteIcon"
+                  onClick={() => handleDeleteId(item)}
+                />
               </div>
             </div>
           );
         })}
+      </div>
+
+      <div className="generatePaymentIdContainer">
+        <button
+          className="generatePaymentIdButton"
+          onClick={handleGeneratePaymentId}
+        >
+          Generate payment Id
+        </button>
       </div>
 
       <NavBar />
