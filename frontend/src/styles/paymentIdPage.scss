@@ -1,2 +1,56 @@
 .paymentIdPage {
+  .paymentIdList {
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    display: grid;
+    grid-template-columns: 90vw;
+
+    @media screen and (min-width: 700px) {
+      grid-template-columns: 40vw 40vw;
+      column-gap: 10vw;
+    }
+
+    .paymentIdItem {
+      height: 50px;
+      border: 1px solid rgba(16, 24, 40, 0.1);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-left: 20px;
+      padding-right: 20px;
+      font-family: $avenirBold;
+
+      &:hover {
+        background-color: rgba(186, 29, 200, 0.08);
+      }
+
+      .iconContainer {
+        display: flex;
+        align-items: center;
+
+        .copyIcon {
+          margin-right: 20px;
+          cursor: pointer;
+          transition: transform 0.2s;
+
+          &:active {
+            transform: scale(1.2);
+          }
+        }
+
+        .deleteIcon {
+          color: red;
+          cursor: pointer;
+
+          transition: transform 0.2s;
+
+          &:active {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
 }

@@ -3,6 +3,8 @@ import ComponentHeader from "../components/componentsHeader/ComponentHeader";
 import NavBar from "../components/NavBar/NavBar";
 import { SkyeWalletContext } from "../context/Context";
 import instance from "../Axios";
+import { GoCopy } from "react-icons/go";
+import { AiFillDelete } from "react-icons/ai";
 
 const PaymentIdPage = () => {
   const { state, dispatch } = useContext(SkyeWalletContext);
@@ -72,13 +74,24 @@ const PaymentIdPage = () => {
         </button>
       </div> */}
 
-      {paymentId?.map((item, id) => {
-        return (
-          <div className="item" key={id}>
-            <h4>{item}</h4>
-          </div>
-        );
-      })}
+      <div className="paymentIdList">
+        {paymentId?.map((item, id) => {
+          return (
+            <div className="paymentIdItem" key={id}>
+              <h4>{item}</h4>
+              <div className="iconContainer">
+                <GoCopy
+                  className="copyIcon"
+                  onClick={() => {
+                    navigator.clipboard.writeText(item);
+                  }}
+                />
+                <AiFillDelete className="deleteIcon" />
+              </div>
+            </div>
+          );
+        })}
+      </div>
 
       <NavBar />
     </div>
