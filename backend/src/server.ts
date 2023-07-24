@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: /* "https://skye-wallet.vercel.app" */ "http://localhost:3000",
+    origin: "https://skye-wallet.vercel.app",
     methods: "GET, POST, PUT, DELETE, OPTIONS",
     credentials: true,
   })

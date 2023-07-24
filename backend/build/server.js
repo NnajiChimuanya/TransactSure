@@ -14,12 +14,12 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
 app.use((0, cors_1.default)({
-    origin: "https://skye-wallet.vercel.app" || "http://localhost:3000",
+    origin: "https://skye-wallet.vercel.app",
     methods: "GET, POST, PUT, DELETE, OPTIONS",
     credentials: true,
 }));
 app.get("/", (req, res) => {
-    res.status(200).send("Skye Wallet userr microservice");
+    res.status(200).send("Skye Wallet user microservice");
 });
 app.use("/auth", authRouter_1.default);
 app.use("/user", userRouter_1.default);
