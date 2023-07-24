@@ -27,7 +27,6 @@ const Transactions: React.FC = () => {
       .post("/user/getTransactions", payload)
       .then((res) => {
         setList(res.data.data);
-        console.log(res.data.data);
       })
       .catch((err) => {
         console.log(err);
