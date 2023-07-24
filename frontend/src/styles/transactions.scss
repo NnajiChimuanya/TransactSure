@@ -1,38 +1,4 @@
 .transactionsPage {
-  .transactionsHeader {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: $avenirRegular;
-
-    height: 50px;
-    width: 100vw;
-    top: 0;
-    position: sticky;
-    z-index: 100;
-    background-color: white;
-    padding: 0px 20px 0px 20px;
-    border: 1px solid rgba(16, 24, 40, 0.1);
-
-    .backspace {
-      transition: transform 0.2s;
-      font-size: 20px;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-
-    .notificationsIcon {
-      transition: transform 0.2s;
-      font-size: 20px;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
-  }
-
   .transactionBody {
     margin-bottom: 100px;
 

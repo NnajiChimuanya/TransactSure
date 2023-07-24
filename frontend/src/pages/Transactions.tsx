@@ -9,6 +9,7 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { MdKeyboardBackspace } from "react-icons/md";
 import { NoTransaction, Credit, Debit } from "../svg";
 import FundAccountButton from "../components/PaymentIdButton/PaymentIdButton";
+import ComponentHeader from "../components/componentsHeader/ComponentHeader";
 
 const Transactions: React.FC = () => {
   let navigate = useNavigate();
@@ -41,14 +42,7 @@ const Transactions: React.FC = () => {
 
   return (
     <div className="transactionsPage">
-      <div className="transactionsHeader">
-        <MdKeyboardBackspace
-          className="backspace"
-          onClick={() => navigate(-1)}
-        />
-
-        <IoMdNotificationsOutline className="notificationsIcon" />
-      </div>
+      <ComponentHeader />
 
       <Balance />
 
