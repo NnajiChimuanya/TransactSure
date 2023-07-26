@@ -120,6 +120,10 @@
       border-radius: 5px;
       cursor: pointer;
 
+      &:hover {
+        transform: scale(1.05);
+      }
+
       @media screen and (min-width: 600px) {
         width: 60vw;
       }
