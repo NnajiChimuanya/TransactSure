@@ -6,6 +6,7 @@ import UserPage from "./pages/UserPage";
 import Transactions from "./pages/Transactions";
 import PaymentIdPage from "./pages/PaymentIdPage";
 import { SkyeWalletContext } from "./context/Context";
+import SendFunds from "./pages/SendFunds";
 
 function App() {
   const { state } = useContext(SkyeWalletContext);
@@ -23,6 +24,10 @@ function App() {
       <Route
         path="/paymentId"
         element={email !== "" ? <PaymentIdPage /> : <SigninPage />}
+      />
+      <Route
+        path="/sendFunds"
+        element={email !== "" ? <SendFunds /> : <SigninPage />}
       />
     </Routes>
   );

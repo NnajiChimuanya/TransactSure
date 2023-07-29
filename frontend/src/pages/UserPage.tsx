@@ -133,7 +133,11 @@ const UserPage = () => {
               className="transfer"
             >
               <Transfer />
-              <h4>Send fund</h4>
+              <h4>
+                <Link className="link" to={"/sendFunds"}>
+                  Send fund
+                </Link>
+              </h4>
             </div>
             <div
               style={{ backgroundColor: "rgba(12, 1, 83, 1)" }}
