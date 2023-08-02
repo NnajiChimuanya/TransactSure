@@ -1,6 +1,6 @@
 .modalContainer {
   background-color: rgba(128, 128, 128, 0.7);
-  z-index: 200;
+  z-index: 2000;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -9,5 +9,37 @@
   justify-content: center;
 
   .modal {
+    width: 300px;
+    height: 230px;
+    flex-shrink: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+
+    .clearIcon {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      cursor: pointer;
+    }
+
+    .modalText {
+      text-align: center;
+      color: #667085;
+      font-size: 14px;
+      font-family: $avenirRegular;
+    }
+
+    .modalButton {
+      border-radius: 4px;
+      background: #009ff5;
+      color: white;
+      font-family: $avenirBold;
+      border: 0px;
+      padding: 10px 0px 10px 0px;
+      cursor: pointer;
+    }
   }
 }
