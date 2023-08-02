@@ -21,6 +21,10 @@ type Action =
   | {
       type: "SET_BALANCE";
       payload: number;
+    }
+  | {
+      type: "SET_MODAL";
+      payload: boolean;
     };
 
 interface ContextProviderProps {
@@ -34,6 +38,7 @@ const initalState = {
   password: "",
   paymentId: [""],
   balance: 0,
+  showModal: false,
 };
 
 const reducer = (state: InitialState, action: Action) => {
@@ -60,6 +65,12 @@ const reducer = (state: InitialState, action: Action) => {
       return {
         ...state,
         balance: payload,
+      };
+
+    case "SET_MODAL":
+      return {
+        ...state,
+        showModal: payload,
       };
 
     default:

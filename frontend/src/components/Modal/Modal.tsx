@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { MdClear } from "react-icons/md";
+import { SkyeWalletContext } from "../../context/Context";
 
 const Modal = () => {
+  const { state, dispatch } = useContext(SkyeWalletContext);
+  const { showModal } = state;
+
+  const toggleModal = () => {
+    dispatch({ type: "SET_MODAL", payload: false });
+  };
+
   return (
-    <div className="modalContainer">
+    <div
+      onClick={toggleModal}
+      className={`modalContainer ${showModal ? null : `closeModal`}`}
+    >
       <div className="modal">
         <div className="clearIcon">
-          <MdClear />
+          <MdClear onClick={toggleModal} />
         </div>
 
         <div className="modalText">
-        Sorry, this PIN is not correct, please try again. 
+          Sorry, this PIN is not correct, please try again.
         </div>
 
-        <button className="modalButton">Try again</button>
+        <button onClick={toggleModal} className="modalButton">
+          Try again
+        </button>
       </div>
     </div>
   );
