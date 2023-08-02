@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import ComponentHeader from "../components/componentsHeader/ComponentHeader";
 import instance from "../Axios";
 import { SkyeWalletContext } from "../context/Context";
+import Modal from "../components/Modal/Modal";
 
 const SendFunds = () => {
   const [recipientId, setRecipientId] = useState("");
@@ -30,6 +31,8 @@ const SendFunds = () => {
   return (
     <div className="sendFunds">
       <ComponentHeader />
+
+      <Modal />
       <form className="form">
         <input
           value={recipientId}
