@@ -5,11 +5,11 @@ import { SkyeWalletContext } from "../context/Context";
 import instance from "../Axios";
 import { GoCopy } from "react-icons/go";
 import { AiFillDelete } from "react-icons/ai";
+import Modal from "../components/Modal/Modal";
 
 const PaymentIdPage = () => {
   const { state, dispatch } = useContext(SkyeWalletContext);
   const { paymentId, email, password } = state;
-  const [errorMessage, setErrorMessage] = useState(null);
   const [successMessage, setsuccessMessage] = useState(null);
 
   console.log(process.env.REACT_APP_API);
@@ -27,10 +27,10 @@ const PaymentIdPage = () => {
       .post("/user/generateNewId", payload)
       .then((res) => {
         if (res.data.status === "success") {
-          setErrorMessage(null);
           dispatch({ type: "SET_PAYMENTID", payload: res.data.paymentId });
         } else {
-          setErrorMessage(res.data.error);
+          dispatch({ type: "SET_MODAL_MESSAGE", payload: res.data.error });
+          dispatch({ type: "SET_MODAL", payload: true });
         }
       })
       .catch((err) => console.log(err));
@@ -44,10 +44,10 @@ const PaymentIdPage = () => {
       .post("/user/deleteId", payload)
       .then((res) => {
         if (res.data.status === "success") {
-          setErrorMessage(null);
           dispatch({ type: "SET_PAYMENTID", payload: res.data.paymentId });
         } else {
-          setErrorMessage(res.data.error);
+          dispatch({ type: "SET_MODAL_MESSAGE", payload: res.data.error });
+          dispatch({ type: "SET_MODAL", payload: true });
         }
       })
       .catch((err) => console.log(err));
@@ -57,13 +57,7 @@ const PaymentIdPage = () => {
     <div className="paymentIdPage">
       <ComponentHeader />
 
-      {errorMessage && (
-        <div className="errorMessageContainer">
-          <div className="errorMessage">
-            <p>{errorMessage}</p>
-          </div>
-        </div>
-      )}
+      <Modal />
 
       <div className="paymentIdList">
         {paymentId?.map((item, id) => {
