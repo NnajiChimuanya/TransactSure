@@ -25,6 +25,10 @@ type Action =
   | {
       type: "SET_MODAL";
       payload: boolean;
+    }
+  | {
+      type: "SET_MODAL_MESSAGE";
+      payload: string;
     };
 
 interface ContextProviderProps {
@@ -39,6 +43,7 @@ const initalState = {
   paymentId: [""],
   balance: 0,
   showModal: false,
+  showModalMessage: "",
 };
 
 const reducer = (state: InitialState, action: Action) => {
@@ -71,6 +76,12 @@ const reducer = (state: InitialState, action: Action) => {
       return {
         ...state,
         showModal: payload,
+      };
+
+    case "SET_MODAL_MESSAGE":
+      return {
+        ...state,
+        showModalMessage: payload,
       };
 
     default:

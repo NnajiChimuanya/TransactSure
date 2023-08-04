@@ -23,9 +23,14 @@ const SendFunds = () => {
     instance
       .post("user/sendFunds", payload)
       .then((res) => {
-        console.log(res.data);
+        if (res.data.status === "error") {
+          dispatch({ type: "SET_MODAL_MESSAGE", payload: res.data.error });
+          dispatch({ type: "SET_MODAL", payload: true });
+        }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

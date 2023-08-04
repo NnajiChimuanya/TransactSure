@@ -4,7 +4,7 @@ import { SkyeWalletContext } from "../../context/Context";
 
 const Modal = () => {
   const { state, dispatch } = useContext(SkyeWalletContext);
-  const { showModal } = state;
+  const { showModal, showModalMessage } = state;
 
   const toggleModal = () => {
     dispatch({ type: "SET_MODAL", payload: false });
@@ -21,7 +21,8 @@ const Modal = () => {
         </div>
 
         <div className="modalText">
-          Sorry, this PIN is not correct, please try again.
+          {showModalMessage}
+          {/* Sorry, this PIN is not correct, please try again. */}
         </div>
 
         <button onClick={toggleModal} className="modalButton">
