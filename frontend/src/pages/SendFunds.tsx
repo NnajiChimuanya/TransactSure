@@ -7,8 +7,9 @@ import Modal from "../components/Modal/Modal";
 const SendFunds = () => {
   const [recipientId, setRecipientId] = useState("");
   const [amount, setAmount] = useState("");
+  const [password, setPassword] = useState("");
   const { state, dispatch } = useContext(SkyeWalletContext);
-  const { balance, password, email } = state;
+  const { balance, email } = state;
 
   const handleSendFunds = (e: React.ChangeEvent<any>) => {
     e.preventDefault();
@@ -38,21 +39,35 @@ const SendFunds = () => {
       <ComponentHeader />
 
       <Modal />
-      <form className="form">
+      <form className="form" autoComplete="off">
         <input
           value={recipientId}
           onChange={(e) => setRecipientId(e.target.value)}
           className="paymentId"
           type={"text"}
           placeholder="Payment Id"
+          autoComplete="off"
         />
 
-        <div className="password-container">
+        <div className="amount-container">
           <input
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             className="amount"
             placeholder="Amount"
+            autoComplete="off"
+          />
+        </div>
+
+        <div className="password-container">
+          <div>Enter your transaction pin</div>
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="password"
+            placeholder=""
+            type="password"
+            autoComplete="new-password"
           />
         </div>
 
