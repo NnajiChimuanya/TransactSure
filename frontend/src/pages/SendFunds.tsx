@@ -30,7 +30,7 @@ const SendFunds = () => {
           dispatch({ type: "SET_MODAL_MESSAGE", payload: res.data.error });
           dispatch({ type: "SET_MODAL", payload: true });
         } else {
-          navigate("/seundFunds/success");
+          navigate("/sendFunds/success");
         }
       })
       .catch((err) => {
