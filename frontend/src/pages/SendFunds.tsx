@@ -3,6 +3,7 @@ import ComponentHeader from "../components/componentsHeader/ComponentHeader";
 import instance from "../Axios";
 import { SkyeWalletContext } from "../context/Context";
 import Modal from "../components/Modal/Modal";
+import { useNavigate } from "react-router-dom";
 
 const SendFunds = () => {
   const [recipientId, setRecipientId] = useState("");
@@ -10,6 +11,7 @@ const SendFunds = () => {
   const [password, setPassword] = useState("");
   const { state, dispatch } = useContext(SkyeWalletContext);
   const { balance, email } = state;
+  const navigate = useNavigate();
 
   const handleSendFunds = (e: React.ChangeEvent<any>) => {
     e.preventDefault();
@@ -27,6 +29,8 @@ const SendFunds = () => {
         if (res.data.status === "error") {
           dispatch({ type: "SET_MODAL_MESSAGE", payload: res.data.error });
           dispatch({ type: "SET_MODAL", payload: true });
+        } else {
+          navigate("/seundFunds/success");
         }
       })
       .catch((err) => {

@@ -14,25 +14,29 @@ function App() {
   const { email } = state;
 
   return (
-    <Routes>
-      <Route path="/" element={email !== "" ? <UserPage /> : <SigninPage />} />
-      <Route path="/signup" element={<SignupPage />} />
-      <Route path="/signin" element={<SigninPage />} />
-      <Route
-        path="/transactions"
-        element={email !== "" ? <Transactions /> : <SigninPage />}
-      />
-      <Route
-        path="/paymentId"
-        element={email !== "" ? <PaymentIdPage /> : <SigninPage />}
-      />
-      <Route
-        path="/sendFunds"
-        element={email !== "" ? <SendFunds /> : <SigninPage />}
-      >
-        <Route path="success" element={<SuccessfulTransaction />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={email !== "" ? <UserPage /> : <SigninPage />}
+        />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signin" element={<SigninPage />} />
+        <Route
+          path="/transactions"
+          element={email !== "" ? <Transactions /> : <SigninPage />}
+        />
+        <Route
+          path="/paymentId"
+          element={email !== "" ? <PaymentIdPage /> : <SigninPage />}
+        />
+        <Route
+          path="/sendFunds/*"
+          element={email !== "" ? <SendFunds /> : <SigninPage />}
+        />
+        <Route path="/sendFunds/success" element={<SuccessfulTransaction />} />
+      </Routes>
+    </>
   );
 }
 
