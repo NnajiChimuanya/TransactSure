@@ -10,7 +10,7 @@ interface INavBar {
   Icon: IconType;
 }
 
-const navBarList = [
+const navBarList: INavBar[] = [
   { name: "Home", Icon: AiOutlineHome },
   { name: "Business", Icon: PiHandCoinsDuotone },
   { name: "Community", Icon: FiUsers },

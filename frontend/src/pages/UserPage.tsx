@@ -9,6 +9,47 @@ import NavBar from "../components/NavBar/NavBar";
 import Balance from "../components/Balance/Balance";
 import { Link } from "react-router-dom";
 import PaymentIdButton from "../components/PaymentIdButton/PaymentIdButton";
+import { IconType } from "react-icons";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import {
+  MdOutlineRealEstateAgent,
+  MdOutlineSyncAlt,
+  MdWifi,
+} from "react-icons/md";
+
+interface IVarietySectionContent {
+  name: string;
+  Icon: IconType;
+  colorFill: string;
+  route: string;
+}
+
+const varietySection: IVarietySectionContent[] = [
+  {
+    name: "Buy airtime",
+    Icon: BsFillTelephoneFill,
+    colorFill: "rgba(22, 83, 1, 1)",
+    route: "#",
+  },
+  {
+    name: "Send funds",
+    Icon: MdOutlineSyncAlt,
+    colorFill: "rgba(0, 99, 153, 1)",
+    route: "sendFunds",
+  },
+  {
+    name: "Buy data",
+    Icon: MdWifi,
+    colorFill: "rgba(12, 1, 83, 1)",
+    route: "#",
+  },
+  {
+    name: "Pay bills",
+    Icon: MdOutlineRealEstateAgent,
+    colorFill: "rgba(186, 29, 200, 1)",
+    route: "#",
+  },
+];
 
 const UserPage = () => {
   const { state, dispatch } = useContext(SkyeWalletContext);
@@ -121,38 +162,21 @@ const UserPage = () => {
         <div className="frame3">
           <h5>What would you like to do ?</h5>
           <div className="services">
-            <div
-              style={{ backgroundColor: "rgba(22, 83, 1, 1)" }}
-              className="airtime"
-            >
-              <Airtime />
-              <h4>Buy airtime</h4>
-            </div>
-            <div
-              style={{ backgroundColor: "rgba(0, 99, 153, 1)" }}
-              className="transfer"
-            >
-              <Transfer />
-              <h4>
-                <Link className="link" to={"/sendFunds"}>
-                  Send fund
-                </Link>
-              </h4>
-            </div>
-            <div
-              style={{ backgroundColor: "rgba(12, 1, 83, 1)" }}
-              className="data"
-            >
-              <Data />
-              <h4>Buy data</h4>
-            </div>
-            <div
-              style={{ backgroundColor: "rgba(186, 29, 200, 1)" }}
-              className="bills"
-            >
-              <Bills />
-              <h4>Pay bills</h4>
-            </div>
+            {varietySection?.map((item) => {
+              let { name, Icon, colorFill, route } = item;
+              return (
+                <div style={{ backgroundColor: colorFill }}>
+                  <div>
+                    <div className="iconContainer">
+                      <Icon style={{ color: colorFill }} name="icon" />
+                    </div>
+                    <Link className="link" to={route}>
+                      {name}
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
