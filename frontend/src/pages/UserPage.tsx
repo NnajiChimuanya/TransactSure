@@ -125,24 +125,16 @@ const UserPage = () => {
 
   return (
     <div className="userPage">
-      {errorMessage && (
-        <div className="main-paragraph">
-          <p style={{ color: "red" }}>{errorMessage}</p>
-        </div>
-      )}
-      {successMessage && (
-        <div className="main-paragraph">
-          <p style={{ color: "green" }}>{successMessage}</p>
-        </div>
-      )}
-
       <div className="header">
         <div>
           {" "}
           <FaUserAlt /> Welcome back, {name}
         </div>
         <div>
-          <IoMdNotificationsOutline className="notificationsIcon" />
+          <Link to="/notifications">
+            {" "}
+            <IoMdNotificationsOutline className="notificationsIcon" />
+          </Link>
         </div>
       </div>
 

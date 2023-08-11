@@ -31,6 +31,7 @@ body {
     .notificationsIcon {
       transition: transform 0.2s;
       font-size: 20px;
+      color: black;
 
       &:hover {
         transform: scale(1.1);
