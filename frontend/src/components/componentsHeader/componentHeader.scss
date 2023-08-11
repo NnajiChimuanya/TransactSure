@@ -16,6 +16,7 @@
   .backspace {
     transition: transform 0.2s;
     font-size: 20px;
+    cursor: pointer;
 
     &:hover {
       transform: scale(1.1);
@@ -25,6 +26,8 @@
   .notificationsIcon {
     transition: transform 0.2s;
     font-size: 20px;
+    cursor: pointer;
+    color: black;
 
     &:hover {
       transform: scale(1.1);

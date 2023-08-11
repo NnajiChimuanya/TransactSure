@@ -8,6 +8,7 @@ import PaymentIdPage from "./pages/PaymentIdPage";
 import { SkyeWalletContext } from "./context/Context";
 import SendFunds from "./pages/SendFunds";
 import SuccessfulTransaction from "./pages/SuccessfulTransaction";
+import NotificationPage from "./pages/notification/NotificationPage";
 
 function App() {
   const { state } = useContext(SkyeWalletContext);
@@ -35,6 +36,8 @@ function App() {
           element={email !== "" ? <SendFunds /> : <SigninPage />}
         />
         <Route path="/sendFunds/success" element={<SuccessfulTransaction />} />
+
+        <Route path="/notifications" element={<NotificationPage />} />
       </Routes>
     </>
   );
