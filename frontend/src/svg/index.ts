@@ -5,5 +5,14 @@ import { ReactComponent as Transfer } from "./transfer.svg";
 import { ReactComponent as NoTransaction } from "./noTransaction.svg";
 import { ReactComponent as Credit } from "./credit.svg";
 import { ReactComponent as Debit } from "./debit.svg";
-
-export { Airtime, Bills, Data, Transfer, NoTransaction, Credit, Debit };
+import { ReactComponent as NoNotification } from "./noNotification.svg";
+export {
+  Airtime,
+  Bills,
+  Data,
+  Transfer,
+  NoTransaction,
+  Credit,
+  Debit,
+  NoNotification,
+};
